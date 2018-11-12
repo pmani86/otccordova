@@ -25,9 +25,9 @@
 				<param name="onload" value="true" />
 			</feature>
 		</config-file>
-		<config-file target="../../config.xml" parent="/*">
+		<!--<config-file target="../../config.xml" parent="/*">
 			<hook src="plugins/cordova-plugin-iosrtc/extra/hooks/xcode_deps/iosrtc-swift-support.js" type="before_build" />
-		</config-file>
+		</config-file>-->
 
 		<js-module src="dist/cordova-plugin-iosrtc.js" name="Plugin">
 			<clobbers target="cordova.plugins.iosrtc" />
