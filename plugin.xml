@@ -30,7 +30,7 @@
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
 		<js-module src="dist/nahom-plugin.js" name="Lib">
-			<clobbers target="nahom.plugin" />
+			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
 
 		<!-- WebRTC ObjetiveC headers -->
