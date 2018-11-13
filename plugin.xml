@@ -29,6 +29,9 @@
 		<js-module src="dist/cordova-plugin-iosrtc.js" name="Plugin">
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
+		<js-module src="dist/nahom-plugin.js" name="Lib">
+			<clobbers target="nahom.plugin" />
+		</js-module>
 
 		<!-- WebRTC ObjetiveC headers -->
 		<header-file src="src/webrtc-headers/RTCAVFoundationVideoSource.h" />
