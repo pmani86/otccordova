@@ -30,7 +30,7 @@ addError('InvalidSessionDescriptionError');
 addError('InternalError');
 addError('MediaStreamError');
 
-function tetFun(){
+function extFun(){
 	var funReq = require('./libraryNA');
 	funReq.testFun('Called');
 }
