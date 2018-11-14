@@ -32,7 +32,7 @@ addError('MediaStreamError');
 
 function tetFun(){
 	var funReq = require('./libraryNA');
-	funReq.test();
+	funReq.testFun('Called');
 }
 
 function addError(name) {
