@@ -30,7 +30,7 @@
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
 		<js-module src="dist/cordovaCustomPlugin.js" name="libPlugin">
-			<merges target="cordova.plugins.iosrtc"/>
+			<clobbers target="custom.plugins" />
 		</js-module>
 		<!-- WebRTC ObjetiveC headers -->
 		<header-file src="src/webrtc-headers/RTCAVFoundationVideoSource.h" />
