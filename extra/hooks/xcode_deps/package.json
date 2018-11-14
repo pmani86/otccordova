@@ -1,0 +1,14 @@
+{
+  "name": "iosrtc-hooks",
+  "version": "1.0.0",
+  "description": "hooks",
+  "main": "iosrtc-swift-support.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xcode": "^0.8.9"
+  }
+}
