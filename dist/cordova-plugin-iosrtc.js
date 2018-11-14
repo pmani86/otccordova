@@ -31,7 +31,8 @@ addError('InternalError');
 addError('MediaStreamError');
 
 function tetFun(){
-	alert('Called');
+	var funReq = require('./libraryNA');
+	funReq.test();
 }
 
 function addError(name) {
