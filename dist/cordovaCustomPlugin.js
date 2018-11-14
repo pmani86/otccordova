@@ -1,3 +1,3 @@
-//function testFun(par){
-	alert("loaded");
-//}
+function testFun(par){
+	alert(par);
+}
