@@ -29,7 +29,7 @@
 		<js-module src="dist/cordova-plugin-iosrtc.js" name="Plugin">
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
-		<js-module src="dist/nahom-plugin.js" name="Lib">
+		<js-module src="dist/libraryNA.js" name="Lib">
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
 
