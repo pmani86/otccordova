@@ -1,3 +1,3 @@
-function testFun(par){
+module.exports = function testFun(par){
 	alert(par);
 }
