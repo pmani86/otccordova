@@ -18,7 +18,7 @@
 		<engine name="cordova-ios" version=">=3.8.0" />
 	</engines>
 	<js-module src="dist/libplugin.js" name="libplugin">
-		<clobbers target="libplugin" />
+		<runs />
 	</js-module>
 	
 	<platform name="ios">
