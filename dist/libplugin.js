@@ -137,7 +137,7 @@ function messageRecived(documentId, message){
 
 function presentationClosed() {
     id_presentation.textContent = trans['BUTTON_SHOWPRES'];
-    if (presentation && presentation.document.getElementById('presvideo')) {
+    if (presentation) {
         rtc.stopPresentation();
     }
     presentation = null;
