@@ -60,7 +60,12 @@ function initializeDom(documentIdVideo, documentIdSelf){
 		document.head.appendChild(pexrtc_script);
 }
 
-function connectDom(conference, node, pin, bandwidth) {
+function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
+	node = nodeValue;
+	conference = conferenceValue;
+	pin = pinValue;
+	bandwidth = bandwidthValue;
+	
 	rtc.makeCall(node, conference, pin, bandwidth);
 	// don't refresh the page here
 	return false;
