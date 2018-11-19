@@ -1,9 +1,9 @@
 function LibPlugin() {}
 
-module.exports = TestFun;
-
 function TestFun(par){
 	alert(par);
 }
+
+module.exports = TestFun;
 
 alert("Direct");
