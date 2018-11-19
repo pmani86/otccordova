@@ -25,7 +25,7 @@ module.exports = {
 	connectDom : connectDom,
 	initializeDom: initializeDom,
 	muteAudio: muteAudio,
-	finalise: disconnect,
+	disconnect: finalise,
 	sendMessage: sendMessage
 };
 
