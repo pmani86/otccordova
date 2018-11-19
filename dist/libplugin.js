@@ -58,6 +58,10 @@ function initializeDom(documentIdVideo, documentIdSelf){
 		};
 		
 		document.head.appendChild(pexrtc_script);
+	
+	console.log("Plugin Initialized");
+	
+	return true;
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
