@@ -60,11 +60,9 @@ function initializeDom(documentIdVideo, documentIdSelf){
 			rtc.onParticipantDelete = participantDelete;  		
 		};
 		
-		document.head.appendChild(pexrtc_script);
+	document.head.appendChild(pexrtc_script);
 	
 	console.log("Plugin Initialized");
-	
-	return true;
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
