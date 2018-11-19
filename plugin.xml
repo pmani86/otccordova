@@ -17,7 +17,10 @@
 	<engines>
 		<engine name="cordova-ios" version=">=3.8.0" />
 	</engines>
-
+	<js-module src="dist/libplugin.js" name="libplugin">
+		<clobbers target="libplugin" />
+	</js-module>
+	
 	<platform name="ios">
 		<config-file target="config.xml" parent="/*">
 			<feature name="iosrtcPlugin">
@@ -29,9 +32,7 @@
 		<js-module src="dist/cordova-plugin-iosrtc.js" name="Plugin">
 			<clobbers target="cordova.plugins.iosrtc" />
 		</js-module>
-		<js-module src="dist/cordovaCustomPlugin.js" name="libPlugin">
-			<merges target="" />
-		</js-module>
+	
 		<!-- WebRTC ObjetiveC headers -->
 		<header-file src="src/webrtc-headers/RTCAVFoundationVideoSource.h" />
 		<header-file src="src/webrtc-headers/RTCAudioSource.h" />
