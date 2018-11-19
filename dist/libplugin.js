@@ -23,7 +23,10 @@ module.exports = {
 	// Expose Library classes and functions.
 	testFunction : testFunction,
 	connectDom : connectDom,
-	initializeDom: initializeDom
+	initializeDom: initializeDom,
+	muteAudio: muteAudio,
+	finalise: disconnect,
+	sendMessage: sendMessage
 };
 
 function initializeDom(documentIdVideo, documentIdSelf){
@@ -73,10 +76,6 @@ function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
 	rtc.makeCall(node, conference, pin, bandwidth);
 	// don't refresh the page here
 	return false;
-}
-
-function muteUnAudio(){
-	video.muted = false;
 }
 
 function doneSetup(videoURL, pin_status) {
