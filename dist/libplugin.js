@@ -1,6 +1,8 @@
 function LibPlugin() {}
 
-function testFun(par){
+module.exports = TestFun;
+
+function TestFun(par){
 	alert(par);
 }
 
