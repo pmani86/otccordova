@@ -30,6 +30,7 @@ module.exports = {
 };
 
 function initializeDom(documentIdVideo, documentIdSelf){
+	console.log('Initialize Called');
 	if (device.platform === 'iOS') {
 			cordova.plugins.iosrtc.registerGlobals();
 			console.log('xxx registered globals');
