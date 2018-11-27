@@ -23,14 +23,14 @@ module.exports = {
 	// Expose Library classes and functions.
 	testFunction : testFunction,
 	connectDom : connectDom,
-	initializeDom: initializeDom,
-	muteAudio: muteAudio,
-	disconnect: finalise,
-	sendMessage: sendMessage
+	initializeDom : initializeDom,
+	muteAudio : muteAudio,
+	disconnect : finalise,
+	sendMessage : sendMessage
 };
 
 function initializeDom(documentIdVideo, documentIdSelf, deviceType){
-	alert('Test');
+	alert(documentIdVideo);
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
