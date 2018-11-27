@@ -30,40 +30,7 @@ module.exports = {
 };
 
 function initializeDom(documentIdVideo, documentIdSelf, deviceType){
-	console.log('Initialize Called');
-	if (deviceType === 'iOS') {
-			cordova.plugins.iosrtc.registerGlobals();
-			console.log('xxx registered globals');
-		} else {
-			permissions = cordova.plugins.permissions;
-			permissions.requestPermission(permissions.CAMERA, success, error);
-			permissions.requestPermission(permissions.RECORD_AUDIO, success, error);
-		}
-		
-		var pexrtc_script = document.createElement('script');
-		pexrtc_script.type = 'text/javascript';
-		pexrtc_script.async = false;
-		pexrtc_script.src = 'https://webmeet.fvc.com/static/webrtc/js/pexrtc.js';
-		
-		pexrtc_script.onload = function() {
-			rtc = new PexRTC();
-			video = document.getElementById(documentIdVideo);
-			selfView = document.getElementById(documentIdSelf);
-
-			//document.addEventListener('beforeunload', finalise);
-
-			rtc.onSetup = doneSetup;
-			console.log('doneSetup is a:', doneSetup);
-			rtc.onConnect = connected;
-			rtc.onError = remoteDisconnect;
-			rtc.onDisconnect = remoteDisconnect;
-			rtc.onParticipantCreate = participantCreate;
-			rtc.onParticipantDelete = participantDelete;  		
-		};
-		
-	document.head.appendChild(pexrtc_script);
-	
-	console.log("Plugin Initialized");
+	alert('Test');
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
