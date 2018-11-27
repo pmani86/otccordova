@@ -29,9 +29,9 @@ module.exports = {
 	sendMessage: sendMessage
 };
 
-function initializeDom(documentIdVideo, documentIdSelf){
+function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 	console.log('Initialize Called');
-	if (device.platform === 'iOS') {
+	if (deviceType === 'iOS') {
 			cordova.plugins.iosrtc.registerGlobals();
 			console.log('xxx registered globals');
 		} else {
