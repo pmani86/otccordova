@@ -1,24 +1,3 @@
-var rtc;
-var bandwidth;
-var pin;
-var video;
-var conference;
-var node;
-var permissions;
-var flash;
-var presentation = null;
-var flash_button = null;
-var presWidth = 1280;
-var presHeight = 720;
-var presenter;
-var source = null;
-var presenting = false;
-var startTime = null;
-var userResized = false;
-var presentationURL = '';
-var videoPresentation = true;
-var selfView;
-
 module.exports = {
 	// Expose Library classes and functions.
 	testFunction : testFunction,
