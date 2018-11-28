@@ -40,52 +40,33 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 			permissions.requestPermission(permissions.RECORD_AUDIO, success, error);
 		}
 		
-	 var node = document.createElement("script"), 
-		okHandler,
-		errHandler;
+		var pexrtc_script = document.createElement('script');
+		pexrtc_script.type = 'text/javascript';
+		pexrtc_script.async = false;
+		pexrtc_script.src = 'https://webmeet.fvc.com/static/webrtc/js/pexrtc.js';
 		
-	node.src = "https://webmeet.fvc.com/static/webrtc/js/pexrtc.js";
+		pexrtc_script.onload = function() {
+			rtc = new PexRTC();
+			video = document.getElementById(documentIdVideo);
+			selfView = document.getElementById(documentIdSelf);
 
-	okHandler = function () {
-		this.removeEventListener("load", okHandler);
-		this.removeEventListener("error", errHandler);
-		PexLoad(documentIdVideo, documentIdSelf);
-	};
-	errHandler = function (error) {
-		this.removeEventListener("load", okHandler);
-		this.removeEventListener("error", errHandler);
-		console.log("Error loading script: " + path);
-	};
+			//document.addEventListener('beforeunload', finalise);
 
-	node.addEventListener("load", okHandler);
-	node.addEventListener("error", errHandler);
-
-	document.head.appendChild(node);
+			rtc.onSetup = doneSetup;
+			console.log('doneSetup is a:', doneSetup);
+			rtc.onConnect = connected;
+			rtc.onError = remoteDisconnect;
+			rtc.onDisconnect = remoteDisconnect;
+			rtc.onParticipantCreate = participantCreate;
+			rtc.onParticipantDelete = participantDelete;  		
+		};
 		
-	alert('test2');
+	document.head.appendChild(pexrtc_script);
+	
 	console.log("Plugin Initialized");
 }
 
-function PexLoad(documentIdVideo, documentIdSelf){
-	alert('PexLoad test');
-	rtc = new PexRTC();
-	video = document.getElementById(documentIdVideo);
-	selfView = document.getElementById(documentIdSelf);
-
-	//document.addEventListener('beforeunload', finalise);
-
-	rtc.onSetup = doneSetup;
-	console.log('doneSetup is a:', doneSetup);
-	rtc.onConnect = connected;
-	rtc.onError = remoteDisconnect;
-	rtc.onDisconnect = remoteDisconnect;
-	rtc.onParticipantCreate = participantCreate;
-	rtc.onParticipantDelete = participantDelete; 
-alert('PexLoad END'); 	
-}
-
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
-	alert(conferenceValue+"-"+ nodeValue+"-"+pinValue+"-"+ bandwidthValue);
 	node = nodeValue;
 	conference = conferenceValue;
 	pin = pinValue;
