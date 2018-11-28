@@ -49,7 +49,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 	okHandler = function () {
 		this.removeEventListener("load", okHandler);
 		this.removeEventListener("error", errHandler);
-		PexLoad();
+		PexLoad(documentIdVideo, documentIdSelf);
 	};
 	errHandler = function (error) {
 		this.removeEventListener("load", okHandler);
@@ -66,7 +66,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 	console.log("Plugin Initialized");
 }
 
-function PexLoad(){
+function PexLoad(documentIdVideo, documentIdSelf){
 	alert('test');
 	rtc = new PexRTC();
 	video = document.getElementById(documentIdVideo);
