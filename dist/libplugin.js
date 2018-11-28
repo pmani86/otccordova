@@ -29,7 +29,7 @@ module.exports = {
 	sendMessage : sendMessage
 };
 
-function initializeDom(documentIdVideo, documentIdSelf, deviceType){
+function initializeDom(documentIdVideo, documentIdSelf, deviceType, docId){
 	console.log('Initialize Called');
 	if (deviceType === 'iOS') {
 			cordova.plugins.iosrtc.registerGlobals();
@@ -63,7 +63,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 			
 		};
 		
-	document.head.appendChild(pexrtc_script);
+	document.getElementById(docId).appendChild(pexrtc_script);
 	alert('test2');
 	console.log("Plugin Initialized");
 }
