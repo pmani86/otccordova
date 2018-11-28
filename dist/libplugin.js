@@ -67,7 +67,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 }
 
 function PexLoad(documentIdVideo, documentIdSelf){
-	alert('test');
+	alert('PexLoad test');
 	rtc = new PexRTC();
 	video = document.getElementById(documentIdVideo);
 	selfView = document.getElementById(documentIdSelf);
@@ -80,7 +80,8 @@ function PexLoad(documentIdVideo, documentIdSelf){
 	rtc.onError = remoteDisconnect;
 	rtc.onDisconnect = remoteDisconnect;
 	rtc.onParticipantCreate = participantCreate;
-	rtc.onParticipantDelete = participantDelete;  	
+	rtc.onParticipantDelete = participantDelete; 
+alert('PexLoad END'); 	
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
