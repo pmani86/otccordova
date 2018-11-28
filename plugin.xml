@@ -16,6 +16,7 @@
 
 	<engines>
 		<engine name="cordova-ios" version=">=3.8.0" />
+		<engine name="cordova-android" version=">=1.8.0" />
 	</engines>
 	
 	<js-module src="dist/libplugin.js" name="libplugin">
