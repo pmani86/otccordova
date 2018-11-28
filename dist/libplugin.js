@@ -58,7 +58,8 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 			rtc.onError = remoteDisconnect;
 			rtc.onDisconnect = remoteDisconnect;
 			rtc.onParticipantCreate = participantCreate;
-			rtc.onParticipantDelete = participantDelete;  		
+			rtc.onParticipantDelete = participantDelete;  	
+			
 		};
 		
 	document.head.appendChild(pexrtc_script);
