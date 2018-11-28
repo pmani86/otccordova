@@ -46,6 +46,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 		pexrtc_script.src = 'https://webmeet.fvc.com/static/webrtc/js/pexrtc.js';
 		
 		pexrtc_script.onload = function() {
+			alert('test');
 			rtc = new PexRTC();
 			video = document.getElementById(documentIdVideo);
 			selfView = document.getElementById(documentIdSelf);
@@ -63,7 +64,7 @@ function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 		};
 		
 	document.head.appendChild(pexrtc_script);
-	
+	alert('test2');
 	console.log("Plugin Initialized");
 }
 
