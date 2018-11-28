@@ -85,6 +85,7 @@ alert('PexLoad END');
 }
 
 function connectDom(conferenceValue, nodeValue, pinValue, bandwidthValue) {
+	alert(conferenceValue+"-"+ nodeValue+"-"+pinValue+"-"+ bandwidthValue);
 	node = nodeValue;
 	conference = conferenceValue;
 	pin = pinValue;
