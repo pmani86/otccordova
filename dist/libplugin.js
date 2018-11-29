@@ -33,7 +33,8 @@ module.exports = {
 };
 
 function onVidyoClientLoaded(status) {
-	console.log("VidyoClient load state - " + status.state);
+	alert("VidyoClient load state - " + status.state);
+	
 	if (status.state == "READY") {
 		VC.CreateVidyoConnector({
 			viewId: "renderer", // Div ID where the composited video will be rendered, see VidyoConnector.html;
@@ -49,9 +50,11 @@ function onVidyoClientLoaded(status) {
 
 		});
 	}
+	alert(vidyoConnector);
 }
 
 function connectVidyo(genToken, user, room) {
+	alert('connectVidyo');
 	vidyoConnector.Connect({
 		host: "prod.vidyo.io",
 		token: genToken,
@@ -72,7 +75,7 @@ function connectVidyo(genToken, user, room) {
 	}).catch(function () {
 		console.error("ConnectCall Failed");
 	});
-
+	alert('connectVidyo2');
 }
 
 
@@ -80,8 +83,8 @@ function initializeVidyo(){
 	var pexrtc_script = document.createElement('script');
 		pexrtc_script.type = 'text/javascript';
 		pexrtc_script.async = false;
-		pexrtc_script.src = 'https://static.vidyo.io/4.1.24.15/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded';
-		
+		pexrtc_script.src = 'https://static.vidyo.io/4.1.24.15/javascript/VidyoClient/VidyoClient.js';
+		pexrtc_script.onload = onVidyoClientLoaded;
 	document.head.appendChild(pexrtc_script);
 	
 	console.log("Plugin Initialized");
