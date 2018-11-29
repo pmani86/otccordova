@@ -86,7 +86,7 @@ function initializeVidyo(){
 		pexrtc_script.src = 'https://static.vidyo.io/4.1.20.3/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded';
 		document.body.appendChild(pexrtc_script);
 	
-	console.log("Plugin Initialized");
+	alert("Video Plugin Initialized");
 }
 function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 	console.log('Initialize Called');
