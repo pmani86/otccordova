@@ -79,11 +79,11 @@ function connectVidyo(genToken, user, room) {
 }
 
 
-function initializeVidyo(){
+function initializeVidyo(srcScript){
 	var pexrtc_script = document.createElement('script');
 		pexrtc_script.type = 'text/javascript';
 		pexrtc_script.async = false;
-		pexrtc_script.src = 'https://static.vidyo.io/4.1.20.3/javascript/VidyoClient/VidyoClient.js';
+		pexrtc_script.src = srcScript;
 		pexrtc_script.onload = onVidyoClientLoaded;
 		document.body.appendChild(pexrtc_script);
 	
