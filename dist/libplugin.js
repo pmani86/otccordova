@@ -18,6 +18,7 @@ var userResized = false;
 var presentationURL = '';
 var videoPresentation = true;
 var selfView;
+var vidyoConnector;
 
 module.exports = {
 	// Expose Library classes and functions.
@@ -26,9 +27,39 @@ module.exports = {
 	initializeDom : initializeDom,
 	muteAudio : muteAudio,
 	disconnect : finalise,
-	sendMessage : sendMessage
+	sendMessage : sendMessage,
+	initializeVidyo : initializeVidyo
 };
 
+function onVidyoClientLoaded(status) {
+	console.log("VidyoClient load state - " + status.state);
+	if (status.state == "READY") {
+		VC.CreateVidyoConnector({
+			viewId: "renderer", // Div ID where the composited video will be rendered, see VidyoConnector.html;
+			viewStyle: "VIDYO_CONNECTORVIEWSTYLE_Default", // Visual style of the composited renderer
+			remoteParticipants: 5, // Maximum number of participants to render
+			logFileFilter: "error",
+			logFileName: "",
+			userData: ""
+		}).then(function (vc) {
+			console.log("Create success");
+			vidyoConnector = vc;
+		}).catch(function (error) {
+
+		});
+	}
+}
+
+function initializeVidyo(){
+	var pexrtc_script = document.createElement('script');
+		pexrtc_script.type = 'text/javascript';
+		pexrtc_script.async = false;
+		pexrtc_script.src = 'https://static.vidyo.io/4.1.24.15/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded';
+		
+	document.head.appendChild(pexrtc_script);
+	
+	console.log("Plugin Initialized");
+}
 function initializeDom(documentIdVideo, documentIdSelf, deviceType){
 	console.log('Initialize Called');
 	if (deviceType === 'iOS') {
