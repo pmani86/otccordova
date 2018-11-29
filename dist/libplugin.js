@@ -84,7 +84,7 @@ function initializeVidyo(){
 		pexrtc_script.type = 'text/javascript';
 		pexrtc_script.async = false;
 		pexrtc_script.src = 'https://static.vidyo.io/4.1.20.3/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded';
-		document.head.appendChild(pexrtc_script);
+		document.body.appendChild(pexrtc_script);
 	
 	console.log("Plugin Initialized");
 }
