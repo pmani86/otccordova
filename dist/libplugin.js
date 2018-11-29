@@ -83,9 +83,8 @@ function initializeVidyo(){
 	var pexrtc_script = document.createElement('script');
 		pexrtc_script.type = 'text/javascript';
 		pexrtc_script.async = false;
-		pexrtc_script.src = 'https://static.vidyo.io/4.1.24.15/javascript/VidyoClient/VidyoClient.js';
-		pexrtc_script.onload = onVidyoClientLoaded;
-	document.head.appendChild(pexrtc_script);
+		pexrtc_script.src = 'https://static.vidyo.io/4.1.20.3/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded';
+		document.head.appendChild(pexrtc_script);
 	
 	console.log("Plugin Initialized");
 }
