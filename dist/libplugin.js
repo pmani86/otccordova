@@ -28,7 +28,8 @@ module.exports = {
 	muteAudio : muteAudio,
 	disconnect : finalise,
 	sendMessage : sendMessage,
-	initializeVidyo : initializeVidyo
+	initializeVidyo : initializeVidyo,
+	connectVidyo : connectVidyo
 };
 
 function onVidyoClientLoaded(status) {
@@ -49,6 +50,31 @@ function onVidyoClientLoaded(status) {
 		});
 	}
 }
+
+function connectVidyo(genToken, user, room) {
+	vidyoConnector.Connect({
+		host: "prod.vidyo.io",
+		token: genToken,
+		displayName: user,
+		resourceId: room,
+		// Define handlers for connection events.
+		onSuccess: function () {
+			console.log("Intiailized");
+		},
+		onFailure: function (reason) {/* Failed */ },
+		onDisconnected: function (reason) {/* Disconnected */ }
+	}).then(function (status) {
+		if (status) {
+			console.log("ConnectCall Success");
+		} else {
+			console.error("ConnectCall Failed");
+		}
+	}).catch(function () {
+		console.error("ConnectCall Failed");
+	});
+
+}
+
 
 function initializeVidyo(){
 	var pexrtc_script = document.createElement('script');
